@@ -1,0 +1,29 @@
+//
+//  Config.xcconfig
+//  retrOS
+//
+//  Created by Stuart Carnie on 12/21/18.
+//  Copyright © 2018 Stuart Carnie. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_DIR=$(PROJECT_DIR)/..
+THIRD_DIR=$(BASE_DIR)/3rdparty
+THIRD_BUILD_DIR=$(BASE_DIR)/build
+
+SLANG_DIR=$(BASE_DIR)/slang
+SLANG_INC=$(SLANG_DIR)/include
+SLANG_LIB=$(THIRD_BUILD_DIR)/slang/lib
+SLANG_LIBS=-lz -lcommon -lglslang -lOGLCompiler -lOSDependent -lspirv-cross-core -lspirv-cross-glsl -lspirv-cross-msl -lSPIRV -lslang
+
+LIBRETRO_DIR=$(SLANG_DIR)/3rdparty/libretro-common
+LIBRETRO_INC=$(LIBRETRO_DIR)/include
+
+HEADER_SEARCH_PATHS=$(inherited) $(SLANG_INC) $(LIBRETRO_INC)
+LIBRARY_SEARCH_PATHS=$(inherited) $(SLANG_LIB)
+
+OTHER_LDFLAGS=$(inherited) $(SLANG_LIBS)
+
+CLANG_CXX_LIBRARY=libc++

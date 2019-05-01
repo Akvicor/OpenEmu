@@ -79,3 +79,6 @@
 [submodule "OpenEmuXPCCommunicator"]
 	path = OpenEmuXPCCommunicator
 	url = git@github.com:OpenEmu/OpenEmuXPCCommunicator.git
+[submodule "slang"]
+	path = slang
+	url = https://github.com/prevos/slang
